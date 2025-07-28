@@ -3,7 +3,7 @@ header('Content-Type: application/json');
 require_once 'db_connect.php';
 
 // ヘルパー関数をインクルード
-require_once 'index.php'; // formatBytes と truncateMemo を利用するため
+require_once 'functions.php';
 
 $method = $_SERVER['REQUEST_METHOD'];
 
