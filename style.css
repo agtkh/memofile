@@ -1,0 +1,24 @@
+body {
+    background-color: #f8f9fa;
+}
+
+.memo-item .content {
+    max-height: 200px;
+    overflow-y: auto;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+.card-footer .actions .btn {
+    /* アイコンボタンのサイズを少し大きくして押しやすくする */
+    padding: 0.3rem 0.6rem;
+    font-size: 0.9rem;
+}
+
+.table-hover tbody tr:hover {
+    background-color: rgba(0, 0, 0, 0.04);
+}
+
+.align-middle {
+    vertical-align: middle;
+}

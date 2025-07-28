@@ -1,0 +1,22 @@
+# OS-generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDE / Editor specific
+.idea/
+.vscode/
+*.swp
+*~
+
+# Local configuration files
+.env
+
+# Uploaded files
+# Keep the directory, but ignore its contents
+uploads/*
+!uploads/.keep
