@@ -1,6 +1,12 @@
 # ディレクトリの参照を禁止
 Options -Indexes
 
+# README.mdやLICENSEなどのファイルを除外
+<FilesMatch "^(README\.md|LICENSE|init\.sql|screenshot00\.png|)$">
+    Order Allow,Deny
+    Deny from all
+</FilesMatch>
+
 # フロントコントローラー
 RewriteEngine On
 RewriteCond %{REQUEST_FILENAME} !-f
