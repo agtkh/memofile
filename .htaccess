@@ -1,51 +1,8 @@
-# ===================================================================
-# Character Encoding
-# ===================================================================
-# Set default character encoding to UTF-8
-AddDefaultCharset UTF-8
-
-# ===================================================================
-# Security
-# ===================================================================
-
-# Deny directory browsing
+# ディレクトリの参照を禁止
 Options -Indexes
 
-# Block access to all hidden files and directories (starting with a dot)
-# This includes .git, .htaccess, .htpasswd, etc.
+# フロントコントローラー
 RewriteEngine On
-RewriteRule "(^|/)\." - [F]
-
-# Block access to other sensitive files
-<FilesMatch "\.(sql|md|gitignore|keep|log|ini|bak|conf|dist|fla|inc|psd|sh|sln|swp)$">
-    Order allow,deny
-    Deny from all
-</FilesMatch>
-
-# Block access to specific critical files
-<FilesMatch "^(db_connect\.php|LICENSE)$">
-    Order allow,deny
-    Deny from all
-</FilesMatch>
-
-# Disable server signature
-ServerSignature Off
-
-# Prevent PHP from displaying errors to prevent info leaks
-php_flag display_errors Off
-
-# Add basic security headers
-<IfModule mod_headers.c>
-    Header set X-Content-Type-Options "nosniff"
-    Header set X-Frame-Options "SAMEORIGIN"
-    Header set X-XSS-Protection "1; mode=block"
-</IfModule>
-
-# ===================================================================
-# URL Rewriting (Front Controller)
-# ===================================================================
-
-# Route all requests to index.php unless the file or directory exists
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^ index.php [L]
